@@ -15,7 +15,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 
-
+#Create Snowpark connection
 connection_parameters = {
   "account": "isrwwph-CIB94565",
   "user": "rscottking1973",
@@ -28,11 +28,7 @@ connection_parameters = {
 }
 session = Session.builder.configs(connection_parameters).create()
 
-# cur=con.cursor()
-# cur.execute('SELECT * FROM RSK.PUBLIC.CUSTOMERCHURN;')
-
-# dataset = cur.fetch_pandas_all()
-
+#Create dataframe
 dataset = session.sql("SELECT * FROM ChurnData").collect()
 # dataset.dropna(inplace=True)
 
