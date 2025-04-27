@@ -23,8 +23,7 @@ connection_parameters = {
   "database":"RSK",
   "schema":"RETAIL",
   "warehouse":"COMPUTE_WH",
-  "password":"B0nnieMacMurray"
-  # "authenticator":"externalbrowser"
+  "authenticator":"externalbrowser"
 }
 session = Session.builder.configs(connection_parameters).create()
 
